@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Portfolio - Trading Tool </h2>
+ <!-- Title text, View name, Controller name-->
+@Html.ActionLink("Add to Portfolio", "PortfolioRegister", "Portfolio")
+<table class="table">
+    <thead class="">
+        <tr>
+            <th>Ticker_Symbol</th>
+            <th>Company</th>
+            <th>Unit Cost</th>
+            <th>Quantity</th>
+            <th>Total Cost</th>
+            <th>Market Price</th>
+            <th>Exchange</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ticker_Symbol</td>
+                <td>@item.companyName</td>
+                <td>@item.unitCost</td>
+                <td>@item.sharesQuantity</td>
+                <td>@item.totalCost</td>
+                <td>@item.price</td>
+                <td>@item.exchangeCode</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

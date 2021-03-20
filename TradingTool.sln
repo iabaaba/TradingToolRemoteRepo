@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingTool", "TradingTool.csproj", "{5BECE2A9-91D7-47D4-A564-9A945375B092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEANlayer", "..\BEANlayer\BEANlayer.csproj", "{8C35EE38-9344-4174-91A6-81BF572ADEB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAOlayer", "..\DAOlayer\DAOlayer.csproj", "{556F76A9-31BA-46E1-BEA2-24BF614F5284}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BECE2A9-91D7-47D4-A564-9A945375B092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BECE2A9-91D7-47D4-A564-9A945375B092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BECE2A9-91D7-47D4-A564-9A945375B092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BECE2A9-91D7-47D4-A564-9A945375B092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C35EE38-9344-4174-91A6-81BF572ADEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C35EE38-9344-4174-91A6-81BF572ADEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C35EE38-9344-4174-91A6-81BF572ADEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C35EE38-9344-4174-91A6-81BF572ADEB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556F76A9-31BA-46E1-BEA2-24BF614F5284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556F76A9-31BA-46E1-BEA2-24BF614F5284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556F76A9-31BA-46E1-BEA2-24BF614F5284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556F76A9-31BA-46E1-BEA2-24BF614F5284}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A2BFE49-1AE1-426C-90C3-3418CAA20864}
+	EndGlobalSection
+EndGlobal

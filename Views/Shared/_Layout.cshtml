@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta name ="keywords" content="Trading Portfolio Platform - Trading Tool,stocks, forex, nasdaq, tsx">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - Trading Portfolio Platform - Trading Tool</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <style>
+            article {
+                column-count:2;
+            }
+            label {
+                width: 220px;
+                display:inline-block;
+            }
+        </style>    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Trading Tool", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Portfolio", "Index", "Portfolio")</li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.tradingview.com/" target="_blank"> TradingView</a></li>
+                    <li><a href="https://www.finviz.com/" target="_blank"> Finviz</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Trading Tool</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

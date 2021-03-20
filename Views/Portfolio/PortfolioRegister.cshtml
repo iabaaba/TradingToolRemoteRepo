@@ -1,0 +1,79 @@
+﻿@using BEANlayer;
+@{
+    ViewBag.Title = "PortfolioRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Portfolio - Trading Tool</h2>
+@using (Html.BeginForm("CreatePortfolio", "Portfolio"))
+{
+<article>
+    <br />
+    <label pad>Ticker-Symbol</label>
+    <input name="tickerSymbol" type="text" placeholder="ticker-symbol" />
+    <br />
+
+    <label>Company</label>
+    <input type="text" name="company" placeholder="company name" />
+    <br />
+
+    <label>Unit Cost</label>
+    <input type="number" name="unitCost" min="0" placeholder="unit cost" step="0.01" />
+    <br />
+
+    <label>Quantity</label>
+    <input type="number" name="quantity" placeholder="quantity" />
+    <br />
+
+    <label>Market Price</label>
+    <input type="number" name="price" min="0" placeholder="buy price" step="0.01" />
+    <br />
+
+    <label>Spread - Post Market Increase</label>
+    <input type="number" name="spread" min="0" placeholder="spread" step="0.01" />
+    <br />
+
+    <label>Buy Date</label>
+    <input type="date" name="buyDate" />
+    <br />
+
+    <label>Pay Dividends?</label>
+    <select name="payDividends" id="payDividends">
+        <option value="select" disabled selected>Select</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select>
+    <br />
+
+    <label>Choose a Exchange</label>
+    <select name="exchangeID">
+        <option value="select" disabled selected>Select a Exchange Market</option>
+        @foreach (var item in (List<ExchangeBEAN>)ViewData["DisplayExchange"])
+        {
+            <option value="item.exchangeID">@item.exchangeDescription</option>
+        }
+        <!--
+        <option value="nasdap" selected>NASDAQ</option>
+        <option value="nyse">NYSE </option>
+        <option value="otc">OTC</option>
+        <option value="neo">NEO </option>
+        <option value="tsx">TSX</option>
+    -->
+    </select>
+    <br />
+
+    <label>Choose a Transaction Type</label>
+    <select name="statusID">
+        <option value="select" disabled selected>Select a Transaction Type</option>
+        @foreach (var item in (List<ShareStatusBEAN>)ViewData["DisplayStatus"])
+        {
+            <option value="item.statusID">@item.statusDescription</option>
+        }
+    </select>
+    <br />
+
+    <input type="submit" value="Register" class="btn btn-success" />
+    <input type="reset" value="Reset" class="btn btn-success" />
+</article>
+}
