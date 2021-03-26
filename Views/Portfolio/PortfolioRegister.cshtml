@@ -46,6 +46,27 @@
     </select>
     <br />
 
+    <label>Target Price</label>
+    <input type="number" name="targetPrice" min="0" placeholder="target price " step="0.01" />
+    <br />
+
+    <label>Target Percentage</label>
+    <input type="number" name="targetPercentage" min="0" placeholder="target percentage" step="0.01" />
+    <br />
+
+    <label>Aim Price</label>
+    <input type="number" name="aimPrice" min="0" placeholder="aim price " step="0.01" />
+    <br />
+
+    <label>Sold Price</label>
+    <input type="number" name="soldPrice" min="0" placeholder="soldPrice" step="0.01" />
+    <br />
+
+    <label>Sold Date</label>
+    <input type="date" name="soldDate" />
+    <br />
+
+
     <label>Choose a Exchange</label>
     <select name="exchangeID">
         <option value="select" disabled selected>Select a Exchange Market</option>
@@ -54,21 +75,63 @@
             <option value="item.exchangeID">@item.exchangeDescription</option>
         }
         <!--
-        <option value="nasdap" selected>NASDAQ</option>
-        <option value="nyse">NYSE </option>
-        <option value="otc">OTC</option>
-        <option value="neo">NEO </option>
-        <option value="tsx">TSX</option>
-    -->
+            <option value="nasdap" selected>NASDAQ</option>
+            <option value="nyse">NYSE </option>
+            <option value="otc">OTC</option>
+            <option value="neo">NEO </option>
+            <option value="tsx">TSX</option>
+        -->
     </select>
     <br />
 
     <label>Choose a Transaction Type</label>
     <select name="statusID">
         <option value="select" disabled selected>Select a Transaction Type</option>
-        @foreach (var item in (List<ShareStatusBEAN>)ViewData["DisplayStatus"])
+        @foreach (var item in (List<ShareStatusBEAN>)ViewData["DisplayShareStatus"])
         {
             <option value="item.statusID">@item.statusDescription</option>
+        }
+    </select>
+    <br />
+
+    <label>Finantial Market</label>
+    <select name="finantialMarketID">
+        <option value="select" disabled selected>Select a Finantial Market </option>
+        @foreach (var item in (List<FinantialMarketBEAN>)ViewData["DisplayFinantialMarket"])
+        {
+            <option value="item.finantialMarketID">@item.finantialMarketCode</option>
+        }
+    </select>
+    <br />
+
+    <label>Source</label>
+    <select name="sourceID">
+        <option value="select" disabled selected>Select a Source Information</option>
+        @foreach (var item in (List<SourceBEAN>)ViewData["DisplaySource"])
+        {
+            <option value="item.sourceID">@item.sourceCode</option>
+        }
+    </select>
+    <br />
+
+
+    <label>Sector</label>
+    <select name="sectorID">
+        <option value="select" disabled selected>Select a Sector </option>
+        @foreach (var item in (List<SectorBEAN>)ViewData["DisplaySector"])
+        {
+            <option value="item.sectorID">@item.sectorDescription</option>
+        }
+    </select>
+    <br />
+
+
+    <label>Industry</label>
+    <select name="industryID">
+        <option value="select" disabled selected>Select an Industry </option>
+        @foreach (var item in (List<IndustryBEAN>)ViewData["DisplayIndustry"])
+        {
+            <option value="item.industryID">@item.industryDescription</option>
         }
     </select>
     <br />

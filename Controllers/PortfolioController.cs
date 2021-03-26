@@ -27,7 +27,19 @@ namespace TradingTool.Controllers
             ViewData["DisplayExchange"] = exchangeDspDAO.exchangeDisplayTbl();
 
             ShareStatusDAO shareStatusDspDAO = new ShareStatusDAO();
-            ViewData["DisplayStatus"] = shareStatusDspDAO.shareStatusDisplayTbl();
+            ViewData["DisplayShareStatus"] = shareStatusDspDAO.shareStatusDisplayTbl();
+
+            FinantialMarketDAO finantialMarketDspDAO = new FinantialMarketDAO();
+            ViewData["DisplayFinantialMarket"] = finantialMarketDspDAO.finantialMarketDisplayTbl();
+
+            SourceDAO sourceDspDAO = new SourceDAO();
+            ViewData["DisplaySource"] = sourceDspDAO.sourceDisplayTbl();
+
+            SectorDAO sectorDspDAO = new SectorDAO();
+            ViewData["DisplaySector"] = sectorDspDAO.sectorDisplayTbl();
+
+            IndustryDAO industryDspDAO = new IndustryDAO();
+            ViewData["DisplayIndustry"] =  industryDspDAO.industryDisplayTbl();
 
             return View();
         }

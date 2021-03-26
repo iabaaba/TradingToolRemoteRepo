@@ -2,7 +2,7 @@
 <html>
 <head>
         <meta charset="utf-8" />
-        <meta name ="keywords" content="Trading Portfolio Platform - Trading Tool,stocks, forex, nasdaq, tsx">
+        <meta name="keywords" content="Trading Portfolio Platform - Trading Tool,stocks, forex, nasdaq, tsx">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@ViewBag.Title - Trading Portfolio Platform - Trading Tool</title>
         @Styles.Render("~/Content/css")
@@ -10,6 +10,7 @@
         <style>
             article {
                 column-count:2;
+
             }
             label {
                 width: 220px;
@@ -31,8 +32,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Portfolio", "Index", "Portfolio")</li>
                 </ul>
 
@@ -41,7 +40,11 @@
                     <li><a href="https://www.finviz.com/" target="_blank"> Finviz</a></li>
                 </ul>
 
-            </div>
+                <ul class ="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+</div>
         </div>
     </div>
     <div class="container body-content">
