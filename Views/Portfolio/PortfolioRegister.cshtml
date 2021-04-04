@@ -8,7 +8,10 @@
 <h2>Portfolio - Trading Tool</h2>
 @using (Html.BeginForm("CreatePortfolio", "Portfolio"))
 {
-<article>
+<section>
+
+
+
     <br />
     <label pad>Ticker-Symbol</label>
     <input name="tickerSymbol" type="text" placeholder="ticker-symbol" />
@@ -47,11 +50,11 @@
     <br />
 
     <label>Target Price</label>
-    <input type="number" name="targetPrice" min="0" placeholder="target price " step="0.01" />
+    <input type="number" name="targetPrice" min="0" placeholder="target price suggested " step="0.01" />
     <br />
 
     <label>Target Percentage</label>
-    <input type="number" name="targetPercentage" min="0" placeholder="target percentage" step="0.01" />
+    <input type="number" name="targetPercentage" min="0" placeholder="target percentage suggested" step="0.01" />
     <br />
 
     <label>Aim Price</label>
@@ -138,5 +141,6 @@
 
     <input type="submit" value="Register" class="btn btn-success" />
     <input type="reset" value="Reset" class="btn btn-success" />
-</article>
+   
+</section>
 }

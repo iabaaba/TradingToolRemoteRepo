@@ -8,13 +8,18 @@
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
         <style>
-            article {
-                column-count:2;
-
+            section {
+                column-count: 1;
+                background-image: url(../../Images/BullBear.jpg) ;
+                background-size:cover;
             }
             label {
                 width: 220px;
                 display:inline-block;
+            }
+
+            body {
+                background-color: darkgray;
             }
         </style>    
 </head>
@@ -35,28 +40,56 @@
                     <li>@Html.ActionLink("Portfolio", "Index", "Portfolio")</li>
                 </ul>
 
+                
                 <ul class="nav navbar-nav">
-                    <li><a href="https://www.tradingview.com/" target="_blank"> TradingView</a></li>
-                    <li><a href="https://www.finviz.com/" target="_blank"> Finviz</a></li>
-                </ul>
-
-                <ul class ="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Support Us", "Support", "Home")</li>
                 </ul>
-</div>
+            </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        <div class="navbar navbar-inverse navbar-bottom ">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://www.stocktargetadvisor.com/" target="_blank" >Stock Target Advisor</a></li>
+                        <li><a href="https://www.tradingview.com/" target="_blank">TradingView</a> </li>
+                        <li><a href="https://finviz.com/" target="_blank">FinViz</a></li>
+                        <li><a href="https://stockmoe.com/" target="_blank">Stock Moe</a></li>
+                        <li><a href="https://stocktwits.com/" target="_blank">Stock Twits</a></li>
+                        <li><a href="https://www.dataroma.com/m/managers.php" target="_blank">DataRoma</a></li>
+                        <li><a href="https://www.koyfin.com/" target="_blank">Koyfin ~ Bloomberg</a></li>
+                        <li><a href="https://investorplace.com/" target="_blank">Investor Place</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navbar navbar-inverse navbar-bottom ">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://www.forex.com/en-ca/" target="_blank">Forex</a></li>
+                        <li><a href="https://www.idc.com/" target="_blank">Idc</a></li>
+                        <li><a href="https://www.motivewave.com/" target="_blank">Motive Wave - Elliot</a></li>
+                        <li><a href="https://www.fxcm.com/" target="_blank">Fxcm</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul>
+        </ul>
+
         <footer>
             <p>&copy; @DateTime.Now.Year - Trading Tool</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -26,5 +26,12 @@ namespace TradingTool.Controllers
 
             return View();
         }
+
+        public ActionResult Support()
+        {
+            ViewBag.Message = "Help Us keeping running this Trading Tool.";
+
+            return View();
+        }
     }
 }
