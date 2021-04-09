@@ -1,4 +1,5 @@
 ﻿using BEANlayer;
+using DAOlayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,20 @@ namespace TradingTool.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Login(LoginBEAN login)
+        [HttpPost]   // Se ejecuta el Post cuando se hace accion con el BOTON  OJO----
+        public ActionResult Login(LoginBEAN plogin)
         {
+            LoginBEAN loginBean = new LoginBEAN();
+            loginBean = new LoginDAO().BuscarLoginByUserId(plogin);
+ //         if (login.userID == "admin"  && login.userPassword == "admin" )
+            if (loginBean.userID !=null)
+            {
+                Session["Login"] = plogin.userID;
+                Session["Password"] = plogin.userPassword;
+                return RedirectToAction("Index", "Portfolio"); // Method in Portfolio Controller
+            }
+
+
             return View();
         }
     }

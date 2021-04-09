@@ -3,10 +3,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .myclass {
+        color: #df0f2e;
+        font-size: 15px;
+        font-weight:600;
+      }
 
-<h2>Portfolio - Trading Tool </h2>
- <!-- Title text, View name, Controller name-->
-@Html.ActionLink("Add to Portfolio", "PortfolioRegister", "Portfolio")
+</style>
+<h2>Portfolio Performance </h2>
+ <!--             Title text,        View name,          Controller name-->
+@Html.ActionLink("Add to Portfolio", "PortfolioRegister", "Portfolio", new { @class = "myclass" });
+
 <table class="table">
     <thead class="">
         <tr>
