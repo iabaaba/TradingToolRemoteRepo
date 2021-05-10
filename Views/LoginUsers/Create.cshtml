@@ -1,0 +1,169 @@
+﻿@model BEANlayer.EFUser.tbl_Users
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create New</title>
+    <style>
+        body {
+            background-color: darkgray;
+            font-size: large;
+            font-weight: 900;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        section {
+            background-image: url(../../Images/Bitcoin.jpg);
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 700px;
+            /*      padding: 1px 1px 1px 1px; /* top right botton left*/ */        
+        }
+
+        container {
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+
+        label {
+            width: 120px;
+            display: inline-block;
+            color: lawngreen;
+            padding-left: 5px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .form-button {
+            padding-left: 600px;
+        }
+
+        h1 {
+            margin: 0px;
+            color: red;
+            text-align: center;
+            font-size: 60px;
+        }
+
+        h4 {
+            margin: 0px;
+            color: red;
+            font-size: 25px;
+        }
+
+        container span {
+            color: crimson;
+        }
+
+        header span {
+            color: crimson;
+        }
+
+        container a {
+            color: whitesmoke;
+            padding-left: 600px;
+        }
+
+
+    </style>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <header>
+            <h1><span>Portfolio</span>Tool</h1>
+        </header>
+        <main>
+            <section>
+                <container>
+                    <div class="form-horizontal">
+                        <h4>Create New User ID</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.userID, "User ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.userID, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.userID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.userPassword, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.userPassword, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.userPassword, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        @if ((string)Session["Login"] == "admin")
+                        {
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.userStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.userStatus, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.userStatus, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.userType, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.userType, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.userType, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.expirationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.expirationDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.expirationDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.timeUpdated, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.timeUpdated, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.timeUpdated, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        }
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                </container>
+            </section>
+        </main>
+        <footer>
+        </footer>
+    }
+
+
+    @if ((string)Session["Login"] == "admin")
+    {
+        <div>
+            @Html.ActionLink("Back to List", "Index")        
+        </div>
+    }
+</body>
+</html>

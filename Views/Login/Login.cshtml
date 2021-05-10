@@ -13,18 +13,46 @@
     <style>
         body {
             background-color: darkgray;
-            background-image: url(../../Images/Bitcoin.jpg) ;
-            background-size: cover;
+            font-size: large;
+            font-weight: 900;
+            font-family: 'Times New Roman', Times, serif ;
         }
         section {
-            column-count: 1;
+            background-image: url(../../Images/Bitcoin.jpg);
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 700px;
 
             /*      padding: 1px 1px 1px 1px; /* top right botton left*/ */
         }
+        container {
+            padding: 0 10px;
+            margin: 0 auto;
+        }
         label {
             width: 120px;
-            display: inline-block;
-  
+            display: inline-block;  
+            color: lawngreen;
+            padding-left: 600px;
+            font-size: 18px;
+            font-weight:900;
+        }
+        .form-button {
+            padding-left: 600px;
+        }
+        h1 {
+            margin: 0px;
+            color: red;
+            text-align: center;
+            font-size: 60px;        
+        }
+        header span {
+            color: crimson;
+        }
+        container a {
+            color: whitesmoke;
+            padding-left: 600px;
         }
 
     </style>
@@ -34,26 +62,36 @@
     @using (Html.BeginForm())
 
     {
-        <section>
-            <div class="form-horizontal">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.userID, "User ID", htmlAttributes: new { @class = "control-label" })
-                    @Html.TextBoxFor(model => model.userID, htmlAttributes: new { @class = "form-control" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.userPassword, "Password", htmlAttributes: new { @class = "control-label" })
-                    @Html.PasswordFor(model => model.userPassword, htmlAttributes: new { @class = "form-control" })
-                </div>
-            </div>
+        <header>
+            <h1>Happy <span>Portfolio</span> Tool</h1>`
+        </header>
+        <main>
+            <section>
+                <container>
+                    <br />
 
+                    @Html.ActionLink("Create New", "Create", "LoginUsers")
 
-            <div>
-                <input type="submit" value="Submit" class="btn btn-success" />
-            </div>
+                    <div class="form-horizontal">
 
-        </section>
-        
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.userID, "User ID", htmlAttributes: new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.userID, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.userPassword, "Password", htmlAttributes: new { @class = "control-label" })
+                            @Html.PasswordFor(model => model.userPassword, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-button ">
+                        <input type="submit" value="Submit" class="btn btn-success" />
+                    </div>
+                </container>
+            </section>
+        </main>
+        <footer>
 
+        </footer>
     }
 </body>
 </html>

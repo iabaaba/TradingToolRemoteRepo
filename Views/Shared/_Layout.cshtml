@@ -9,17 +9,24 @@
         @Scripts.Render("~/bundles/modernizr")
         <style>
             section {
-                column-count: 1;
+                column-count: 2;
                 background-image: url(../../Images/BullBear.jpg) ;
                 background-size:cover;
+                height: 500px;
+            }
+            section div {
+                width: 700px;
+
             }
             label {
                 width: 220px;
                 display:inline-block;
             }
-
             body {
                 background-color: darkgray;
+            }
+            p {
+                display:inline-block
             }
         </style>    
 </head>
@@ -32,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Happy Trading Tool", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Happy Portfolio Tool", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

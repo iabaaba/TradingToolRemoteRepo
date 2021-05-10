@@ -1,4 +1,5 @@
-﻿
+﻿@using BEANlayer;
+@model  List<PortfolioBEAN>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,12 +8,11 @@
     .myclass {
         color: #df0f2e;
         font-size: 15px;
-        font-weight:600;
-      }
-
+        font-weight: 600;
+    }
 </style>
 <h2>Portfolio Performance </h2>
- <!--             Title text,        View name,          Controller name-->
+<!--             Title text,        View name,          Controller name-->
 @Html.ActionLink("Add to Portfolio", "PortfolioRegister", "Portfolio", new { @class = "myclass" });
 
 <table class="table">
@@ -36,10 +36,19 @@
                 <td>@item.unitCost</td>
                 <td>@item.sharesQuantity</td>
                 <td>@item.totalCost</td>
-                <td>@item.price</td>
+                <td>@item.marketPrice</td>
                 <td>@item.exchangeCode</td>
             </tr>
         }
     </tbody>
 </table>
+
+@if ((string)Session["Login"] == "admin")
+{
+<div>
+    <hr />
+    @Html.ActionLink("Back to Users List", "Index", "LoginUsers")
+    
+</div>
+}
 

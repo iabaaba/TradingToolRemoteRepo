@@ -19,6 +19,7 @@ namespace TradingTool.Controllers
         [HttpPost]   // Se ejecuta el Post cuando se hace accion con el BOTON  OJO----
         public ActionResult Login(LoginBEAN plogin)
         {
+            
             LoginBEAN loginBean = new LoginBEAN();
             loginBean = new LoginDAO().BuscarLoginByUserId(plogin);
  //         if (login.userID == "admin"  && login.userPassword == "admin" )
@@ -28,8 +29,6 @@ namespace TradingTool.Controllers
                 Session["Password"] = plogin.userPassword;
                 return RedirectToAction("Index", "Portfolio"); // Method in Portfolio Controller
             }
-
-
             return View();
         }
     }

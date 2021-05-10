@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginUsersController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,11 @@
     <Content Include="Views\Portfolio\PortfolioRegister.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\LoginUsers\Create.cshtml" />
+    <Content Include="Views\LoginUsers\Delete.cshtml" />
+    <Content Include="Views\LoginUsers\Details.cshtml" />
+    <Content Include="Views\LoginUsers\Edit.cshtml" />
+    <Content Include="Views\LoginUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

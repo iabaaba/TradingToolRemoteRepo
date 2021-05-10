@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BEANlayer.EFUser.tbl_Users>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userID )
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.expirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.timeUpdated)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.userID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.expirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.timeUpdated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.sequenceID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.sequenceID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.sequenceID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

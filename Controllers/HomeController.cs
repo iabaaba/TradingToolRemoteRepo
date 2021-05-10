@@ -15,14 +15,14 @@ namespace TradingTool.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Happy Trading Tool.";
+            ViewBag.Message = "Happy Portfolio Tool.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Happy Trading Tool.";
+            ViewBag.Message = "Happy Portfolio Tool.";
 
             return View();
         }

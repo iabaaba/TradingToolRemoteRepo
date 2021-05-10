@@ -1,0 +1,74 @@
+﻿@model BEANlayer.EFUser.tbl_Users
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>tbl_Users</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.userID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.userID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.userPassword)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.userPassword)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.userStatus)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.userStatus)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.userType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.userType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.expirationDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.expirationDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.timeUpdated)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.timeUpdated)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.sequenceID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
