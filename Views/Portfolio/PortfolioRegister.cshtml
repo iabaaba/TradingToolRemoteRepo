@@ -1,24 +1,25 @@
-﻿@using BEANlayer;
+﻿@using BEANlayer
+@model PortfolioBEAN
 @{
     ViewBag.Title = "PortfolioRegister";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <h2>Portfolio - Trading Tool</h2>
 @using (Html.BeginForm("CreatePortfolio", "Portfolio"))
 {
+    @Html.AntiForgeryToken()
 <section>
 
 
 
     <br />
     <label pad>Ticker-Symbol</label>
-    <input name="tickerSymbol" type="text" placeholder="ticker-symbol" />
+    <input name="ticker_Symbol" type="text" placeholder="ticker-symbol" />
     <br />
 
-    <label>Company</label>
-    <input type="text" name="company" placeholder="company name" />
+    <label>Company name</label>
+    <input type="text" name="companyName" placeholder="company name" />
     <br />
 
     <label>Unit Cost</label>
@@ -26,11 +27,10 @@
     <br />
 
     <label>Quantity</label>
-    <input type="number" name="quantity" placeholder="quantity" />
+    <input type="number" name="sharesQuantity" placeholder="quantity" />
     <br />
-
     <label>Market Price</label>
-    <input type="number" name="price" min="0" placeholder="buy price" step="0.01" />
+    <input type="number" name="marketPrice" min="0" placeholder="buy price" step="0.01" />
     <br />
 
     <label>Spread - Post Market Increase</label>
@@ -42,14 +42,13 @@
     <br />
 
     <label>Pay Dividends?</label>
-    <select name="payDividends" id="payDividends">
+    <select name="payDividend" id="payDividend">
         <option value="select" disabled selected>Select</option>
         <option value="no">No</option>
         <option value="yes">Yes</option>
     </select>
     <br />
-
-    <label>Target Price</label>
+    <label>Suggested Target Price</label>
     <input type="number" name="targetPrice" min="0" placeholder="target price suggested " step="0.01" />
     <br />
 
@@ -57,10 +56,9 @@
     <input type="number" name="targetPercentage" min="0" placeholder="target percentage suggested" step="0.01" />
     <br />
 
-    <label>Aim Price</label>
+    <label>Goal Aim Price</label>
     <input type="number" name="aimPrice" min="0" placeholder="aim price " step="0.01" />
     <br />
-
     <label>Sold Price</label>
     <input type="number" name="soldPrice" min="0" placeholder="soldPrice" step="0.01" />
     <br />
@@ -69,7 +67,14 @@
     <input type="date" name="soldDate" />
     <br />
 
-
+    <label>Type of Risk</label>
+    <select name="portfolioType">
+        <option value="select" disabled selected>Select a Type of Risk</option>
+        <option value="Agr" selected>Agresivo</option>
+        <option value="Mod">Moderado</option>
+        <option value="Con">Conservador</option>
+    </select>
+    <br />
     <label>Choose a Exchange</label>
     <select name="exchangeID">
         <option value="select" disabled selected>Select a Exchange Market</option>
@@ -86,9 +91,8 @@
         -->
     </select>
     <br />
-
     <label>Choose a Transaction Type</label>
-    <select name="statusID">
+    <select name="shareStatusID">
         <option value="select" disabled selected>Select a Transaction Type</option>
         @foreach (var item in (List<ShareStatusBEAN>)ViewData["DisplayShareStatus"])
         {
@@ -116,8 +120,6 @@
         }
     </select>
     <br />
-
-
     <label>Sector</label>
     <select name="sectorID">
         <option value="select" disabled selected>Select a Sector </option>
@@ -127,8 +129,6 @@
         }
     </select>
     <br />
-
-
     <label>Industry</label>
     <select name="industryID">
         <option value="select" disabled selected>Select an Industry </option>
@@ -141,6 +141,6 @@
 
     <input type="submit" value="Register" class="btn btn-success" />
     <input type="reset" value="Reset" class="btn btn-success" />
-   
+
 </section>
 }

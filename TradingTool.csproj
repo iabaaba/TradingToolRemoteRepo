@@ -145,7 +145,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\BullBear.jpg" />
-    <Content Include="Images\Bitcoin.jpg" />
+    <Content Include="Images\ScreenShot21May14.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -182,6 +182,7 @@
     <Content Include="Views\LoginUsers\Details.cshtml" />
     <Content Include="Views\LoginUsers\Edit.cshtml" />
     <Content Include="Views\LoginUsers\Index.cshtml" />
+    <Content Include="Views\Login\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

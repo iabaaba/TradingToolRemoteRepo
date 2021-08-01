@@ -18,27 +18,39 @@
 <table class="table">
     <thead class="">
         <tr>
-            <th>Ticker_Symbol</th>
+            <th >Ticker_Symbol</th>
             <th>Company</th>
             <th>Unit Cost</th>
-            <th>Quantity</th>
             <th>Total Cost</th>
+            <th>Shares</th>
+            <th>Holding_Period  in_days</th>
             <th>Market Price</th>
+            <th>Market Value</th>
+            <th>Gain/Lost</th>
+            <th>Return %</th>
             <th>Exchange</th>
+            <th>% Portfolio</th>
         </tr>
     </thead>
+    <br />
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.ticker_Symbol</td>
-                <td>@item.companyName</td>
-                <td>@item.unitCost</td>
-                <td>@item.sharesQuantity</td>
-                <td>@item.totalCost</td>
-                <td>@item.marketPrice</td>
-                <td>@item.exchangeCode</td>
-            </tr>
+        <tr>
+            <td>@item.ticker_Symbol</td>
+            <td>@item.companyName</td>
+            <td align="right">@Decimal.Round(item.unitCost, 2)</td>
+            <td align="right">@Decimal.Round(item.totalCost, 2)</td>
+            <td align="right">@item.sharesQuantity</td>
+            <td align="right">@item.holdingPeriodinDays</td>
+            <td align="right">@Decimal.Round(item.marketPrice, 2)</td>
+            <td align="right">@Decimal.Round(item.marketValue, 2)</td>
+            <td align="right">@Decimal.Round(item.gainLost, 2)</td>
+            <td align="right">@Decimal.Round(@item.returned, 2)</td>
+            <td align="center">@item.exchangeCode</td>
+            <td align="right">@Decimal.Round(item.portfolioPercentage, 2)</td>
+
+        </tr>
         }
     </tbody>
 </table>

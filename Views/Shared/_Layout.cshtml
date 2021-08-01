@@ -55,6 +55,10 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
+                        @*@if (User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Sign Out", "Logout", "Login")</li>
+                        }*@
                         <li style="color: #9d9d9d;padding-top: 15px; padding-bottom:15px;">
                             User Name: <b style="color: white"> @Session["Login"].ToString()</b>
                         </li>

@@ -12,12 +12,15 @@ namespace TradingTool.Controllers
     {
         PortfolioDAO portfDAO = new PortfolioDAO();
         // GET: Portfolio
+        
         [HttpGet]
         public ActionResult Index()
         {
             PortfolioDAO portfDAO = new PortfolioDAO();
             List<PortfolioBEAN> listPorf = new List<PortfolioBEAN>();
-            listPorf = portfDAO.portfolioComposicion();
+            string sessionValue = Session["Login"].ToString();
+            
+            listPorf = portfDAO.portfolioComposicion(sessionValue);
             return View(listPorf);
         }
         [HttpGet]
@@ -45,8 +48,11 @@ namespace TradingTool.Controllers
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreatePortfolio(PortfolioBEAN portfo) 
         {
+            portfo.userID = Session["Login"].ToString();
+            portfo.timeUpdated = DateTime.Now;
             PortfolioDAO porfDAO = new PortfolioDAO();
             bool answer = porfDAO.PortfolioRegister(portfo);
             if (answer)

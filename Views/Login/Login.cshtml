@@ -12,17 +12,17 @@
     <title>Login</title>
     <style>
         body {
-            background-color: darkgray;
+            background-color: black;
             font-size: large;
             font-weight: 900;
             font-family: 'Times New Roman', Times, serif ;
         }
         section {
-            background-image: url(../../Images/Bitcoin.jpg);
-            background-size: auto;
+            background-image: url(../../Images/ScreenShot21May14.png);
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
-            height: 700px;
+            height: 550px;
 
             /*      padding: 1px 1px 1px 1px; /* top right botton left*/ */
         }
@@ -33,44 +33,57 @@
         label {
             width: 120px;
             display: inline-block;  
-            color: lawngreen;
+            color: greenyellow;
             padding-left: 600px;
             font-size: 18px;
             font-weight:900;
         }
+        strong {
+            width: 120px;
+            display: inline-block;
+            color: red;
+            padding-left: 600px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
         .form-button {
             padding-left: 600px;
         }
         h1 {
             margin: 0px;
-            color: red;
+            color: blue;
             text-align: center;
             font-size: 60px;        
         }
         header span {
-            color: crimson;
+            color: forestgreen;
         }
         container a {
             color: whitesmoke;
             padding-left: 600px;
+            text-decoration:none;
+        }
+        div div {
+            color: gray;
         }
 
     </style>
 </head>
 <body>
-
     @using (Html.BeginForm())
 
     {
+        @Html.AntiForgeryToken()
         <header>
-            <h1>Happy <span>Portfolio</span> Tool</h1>`
+            <h1> <span>Portfolio</span> Tool</h1>`
         </header>
         <main>
             <section>
                 <container>
                     <br />
-
-                    @Html.ActionLink("Create New", "Create", "LoginUsers")
+                    <br />
+                    @Html.ActionLink("New Users", "Create", "LoginUsers")
 
                     <div class="form-horizontal">
 
@@ -86,11 +99,20 @@
                     <div class="form-button ">
                         <input type="submit" value="Submit" class="btn btn-success" />
                     </div>
+                    testPostBack
+                    <input type="hidden" id="testPostBack" name="testPostBack" value="" />
+                    @if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <div>
+                            <div>
+                                <strong>Attention: </strong> @ViewBag.Message
+                            </div>
+                        </div>
+                    }
                 </container>
             </section>
         </main>
         <footer>
-
         </footer>
     }
 </body>

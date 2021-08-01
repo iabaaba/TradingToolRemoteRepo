@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEANlayer", "..\BEANlayer\B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAOlayer", "..\DAOlayer\DAOlayer.csproj", "{556F76A9-31BA-46E1-BEA2-24BF614F5284}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pythonInterface", "..\pythonInterface\pythonInterface.csproj", "{D0DB96E7-BC62-4F2B-8684-530251432F59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{556F76A9-31BA-46E1-BEA2-24BF614F5284}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{556F76A9-31BA-46E1-BEA2-24BF614F5284}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{556F76A9-31BA-46E1-BEA2-24BF614F5284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0DB96E7-BC62-4F2B-8684-530251432F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0DB96E7-BC62-4F2B-8684-530251432F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0DB96E7-BC62-4F2B-8684-530251432F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0DB96E7-BC62-4F2B-8684-530251432F59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
